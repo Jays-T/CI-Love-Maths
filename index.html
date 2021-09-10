@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+<section>
+    <div class="main">
+        <!-- <img src="assets/images/logo.png" alt="Love Maths Logo"> -->
+        <h1 class="heading">Love Maths</h1>
+        
+        <div class="game-area">
+            <div class="game-controls">
+                <button class="btn"> 
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button class="btn"> 
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button class="btn"> 
+                    <i class="fas fa-times"></i>
+                </button>
+                <button class="btn"> 
+                    <i class="fas fa-divide"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="question-area">
+            <div class="answer-message">
+                <span class="question-set number-display" id="operand1">0</span>
+                <span class="question-set" id="operator">x</span>
+                <span class="question-set number-display" id="operand2">0</span>
+                <span class="question-set">=</span>
+                <input id="answer-box" type="number">
+            </div>
+        </div>
+        <button class="btn btn--gray submit-answer">
+            <span class="submit-text">Submit Answer</span>
+            <i class="far fa-check-circle"></i>
+        </button>
+
+        <div class="score-area">
+            <div class="scores">Correct <span class="number-display" id="correct">0</span></div>
+            <div class="scores">Incorrect <span class="number-display" id="incorrect">0</span></div>
+        </div>
+    </div>
+</section>
+
+<script src="assets/js/maths.js"></script>
+</body>
+</html>
