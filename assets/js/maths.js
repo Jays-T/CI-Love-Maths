@@ -1,5 +1,3 @@
-console.log("Wololo")
-
 const submitButton = document.querySelector('.submit-answer');
 const submitText = document.querySelector('.submit-text');
 const checkIcon = document.querySelector('.fa-check-circle');
@@ -38,9 +36,6 @@ submitButton.addEventListener('mouseleave', () => {
     checkIcon.style = appliedStyle;
     for (opacity = 1; opacity >= 0; opacity = opacity - 1) 
     {   
-        submitText.style.opacity = opacity;        
-        // setTimeout(() => {
-        //     submitText.style.opacity = opacity;
-        // },10)                       
+        submitText.style.opacity = opacity;                         
     }
 });
