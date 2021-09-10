@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway%7CRighteous");
+:root {
+
+    --main-bg: hsl(201, 23%, 38%);
+
+    --box-shadow: -2px -2px 12px hsla(205, 22%, 65%, 0.439),
+    inset 6px 6px 12px hsla(200, 85%, 8%, 0.439),
+    inset -2px -2px 12px hsla(205, 22%, 65%, 0.439),
+    6px 6px 12px hsla(200, 85%, 8%, 0.439);
+    
+    --text-shadow: -1px -1px 2px hsla(205, 22%, 65%, 0.439),
+    6px 6px 4px hsla(206, 23%, 18%, 0.439),
+    -1px -1px 2px hsla(205, 22%, 65%, 0.439),
+    6px 6px 4px hsla(206, 23%, 18%, 0.439);
+
+    --hover-shadow: -6px -6px 12px hsla(205, 22%, 65%, 0.439),
+    inset 6px 6px 75px hsla(206, 23%, 18%, 0.439),
+    inset -6px -6px 75px hsla(205, 22%, 65%, 0.439),
+    6px 6px 12px hsla(206, 23%, 18%, 0.439);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    background-color: var(--main-bg);
+    color: hsla(206, 23%, 18%, 0.839);
+}
+
+.heading {
+    color:hsl(201, 23%, 38%);
+    font-size: 8rem;
+    text-shadow: var(--text-shadow);
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(201, 23%, 38%);
+    color: hsla(206, 23%, 18%, 0.739);
+    outline: none;
+    cursor: pointer;
+    font-size: 3rem;
+    margin: .7rem;
+    border: 2px solid hsl(201, 23%, 38%);
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    height: 75px;
+    width: 75px;
+    transition: all .3s ease-in-out;
+}
+
+
+.btn:hover {
+    box-shadow: var(--hover-shadow);
+}
+
+.submit-answer {
+    position: relative;
+}
+
+.submit-text {
+    width: 8em;
+    position: absolute;
+    left: .2em;
+    top: .3em;
+    transition: opacity .1s ease-in;
+    opacity: 0;
+    font-size: .8em;
+}
+
+.question-area, .score-area {
+    display: flex;
+    flex-direction: row;
+    font-size: 2rem;
+    padding: 1.5em 0;
+}
+
+.question-set .scores {
+    margin: 35px;
+    padding: 15px 35px;
+    border: 2px solid hsl(201, 23%, 38%);
+    box-shadow: var(--box-shadow);
+}
+
+.answer-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.2rem;
+}
+
+.question-set, .scores {
+    height: 100%;
+    margin: .4em .4em;
+}
+
+#answer-box {
+    background-color: var(--main-bg);
+    border: 2px solid hsl(201, 23%, 38%);
+    border-radius: .2em;
+    box-shadow: var(--box-shadow);
+    height: 100%;
+}
