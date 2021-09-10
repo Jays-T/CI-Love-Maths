@@ -13,6 +13,16 @@
     -1px -1px 2px hsla(205, 22%, 65%, 0.439),
     6px 6px 4px hsla(206, 23%, 18%, 0.439);
 
+    --submit-text-shadow: -1px -1px 2px hsla(204, 15%, 54%, 0.439),
+    2px 2px 2px hsla(206, 23%, 18%, 0.439),
+    -1px -1px 2px hsla(204, 15%, 54%, 0.439),
+    2px 2px 1px hsla(206, 23%, 18%, 0.439);
+
+    --icon-text-shadow: -1px -1px 2px hsla(205, 22%, 65%, 0.439),
+    2px 2px 3px hsla(203, 15%, 17%, 0.439),
+    -1px -1px 2px hsla(205, 22%, 65%, 0.439),
+    2px 2px 3px hsla(203, 15%, 17%, 0.439);
+
     --hover-shadow: -6px -6px 12px hsla(205, 22%, 65%, 0.439),
     inset 6px 6px 75px hsla(206, 23%, 18%, 0.439),
     inset -6px -6px 75px hsla(205, 22%, 65%, 0.439),
@@ -36,13 +46,23 @@ body {
     text-shadow: var(--text-shadow);
 }
 
-.main {
+section {
     height: 100vh;
     width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    height: 80%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 2px solid hsl(201, 23%, 38%);
+    box-shadow: var(--box-shadow);
 }
 
 .btn {
@@ -67,6 +87,18 @@ body {
     box-shadow: var(--hover-shadow);
 }
 
+.btn span {
+    transition: all .5s ease-in-out;
+}
+
+.btn:hover span {
+    text-shadow: var(--submit-text-shadow);
+}
+
+.operand:hover {
+    text-shadow: var(--icon-text-shadow);
+}
+
 .submit-answer {
     position: relative;
 }
@@ -80,6 +112,7 @@ body {
     top: .3em;
     transition: opacity .1s ease-in;
     opacity: 0;
+    font-weight: 600;
     font-size: .8em;
 }
 
@@ -119,4 +152,24 @@ body {
     border-radius: .2em;
     box-shadow: var(--box-shadow);
     height: 100%;
+    width: 8rem;
+    color:hsla(206, 23%, 18%, 0.839);
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+#answer-box:focus {
+    outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
