@@ -120,40 +120,43 @@ buttons.forEach(button => button.addEventListener('click', () => {
         button.classList.toggle('btn-anim')
     }, 600)
     
-    // show answer box
-    if (!answerBox.classList.contains('set-visible')) {
-        answerBox.classList.add('set-visible');
-    }
-
-    // fade in opacity on questionSetContainer
-    for (opacity = 0; opacity < 1.1; opacity = opacity + 0.1) 
-    {           
-        setTimeout(() => {
-            questionSetContainer.style.opacity = opacity;
-        },220)     
-    }
-
-    chosenOperand = button.dataset.operand;
-    for (icon of icons) {
-        if (chosenOperand === icon.operand) {
-
-            for (opacity = 0; opacity < 1.1; opacity = opacity + 0.1) 
-            {           
-                setTimeout(() => {
-                    operator.style.opacity = opacity;
-                },400)
-            };
-
-            appliedIcon = icon.icon_style
-            appliedStyle = `
-                    text-shadow: ${iconShadow};
-                    color: ${icon.color}`
-
-            setTimeout(() => {
-                operator.innerHTML = appliedIcon;
-                operator.style = appliedStyle;
-            }, 200)
+    if (!button.dataset.type) {
+        // show answer box
+        if (!answerBox.classList.contains('set-visible')) {
+            answerBox.classList.add('set-visible');
         }
+        
+        // fade in opacity on questionSetContainer
+        for (opacity = 0; opacity < 1.1; opacity = opacity + 0.1) 
+        {           
+            setTimeout(() => {
+                questionSetContainer.style.opacity = opacity;
+            },200)     
+        }
+        
+        chosenOperand = button.dataset.operand;
+        for (icon of icons) {
+            if (chosenOperand === icon.operand) {
+        
+                for (opacity = 0; opacity < 1.1; opacity = opacity + 0.1) 
+                {           
+                    setTimeout(() => {
+                        operator.style.opacity = opacity;
+                    },220)
+                };
+        
+                appliedIcon = icon.icon_style
+                appliedStyle = `
+                        text-shadow: ${iconShadow};
+                        color: ${icon.color}`
+        
+                setTimeout(() => {
+                    operator.innerHTML = appliedIcon;
+                    operator.style = appliedStyle;
+                }, 180)
+            }
+        }
+        runGame(chosenOperand);
     }
-
 }));
+
