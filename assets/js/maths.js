@@ -11,11 +11,7 @@ function runGame(selected) {
     operandTwo = document.getElementById('operand2');
 
     operandOne.innerText = operandOneNum;
-    operandTwo.innerText = operandTwoNum;
-    message = document.querySelector('.message');
-
-    message.innerText = "New Question"
-    
+    operandTwo.innerText = operandTwoNum;    
 }
 
 function checkAnswer() {
