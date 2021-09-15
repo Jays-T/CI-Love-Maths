@@ -35,10 +35,12 @@
 
         <div class="question-area">
             <div class="answer-message">
-                <span class="question-set number-display" id="operand1">0</span>
-                <span class="question-set" id="operator">x</span>
-                <span class="question-set number-display" id="operand2">0</span>
-                <span class="question-set">=</span>
+                <div class="question-set-container">
+                    <span class="question-set number-display" id="operand1">0</span>
+                    <span class="question-set" id="operator"></span>
+                    <span class="question-set number-display" id="operand2">0</span>
+                    <span class="question-set">=</span>
+                </div>
                 <input id="answer-box" type="number">
             </div>
         </div>
@@ -52,8 +54,10 @@
             <div class="scores">Incorrect <span class="number-display" id="incorrect">0</span></div>
         </div>
     </div>
+
 </section>
 
+<script src="assets/js/animations.js"></script>
 <script src="assets/js/maths.js"></script>
 </body>
 </html>
