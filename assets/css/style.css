@@ -13,6 +13,11 @@
     -1px -1px 2px hsla(205, 22%, 65%, 0.439),
     6px 6px 4px hsla(206, 23%, 18%, 0.439);
 
+    --text-shadow-rem: -.06rem -.06rem .09rem hsla(205, 22%, 65%, 0.439),
+    .4rem .4rem .2rem  hsla(206, 23%, 18%, 0.439),
+    -.06rem -.06rem .09rem hsla(205, 22%, 65%, 0.439),
+    .4rem .4rem .2rem hsla(206, 23%, 18%, 0.439);
+
     --submit-text-shadow: -1px -1px 2px hsla(204, 15%, 54%, 0.439),
     2px 2px 2px hsla(206, 23%, 18%, 0.439),
     -1px -1px 2px hsla(204, 15%, 54%, 0.439),
@@ -43,7 +48,7 @@ body {
 .heading {
     color:hsl(201, 23%, 38%);
     font-size: 8rem;
-    text-shadow: var(--text-shadow);
+    text-shadow: var(--text-shadow-rem);
 }
 
 section {
