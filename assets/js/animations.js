@@ -6,8 +6,6 @@ const buttons = document.querySelectorAll('.btn');
 const answerBox = document.getElementById('answer-box');
 const questionSetContainer = document.querySelector('.question-set-container');
 const activeOperator = document.getElementById('operator-display');
-const operandOne = document.getElementById('operand1');
-const operandTwo = document.getElementById('operand2');
 
 
 const baseFontColor = `hsla(206, 23%, 18%, 0.839)`;
@@ -159,7 +157,7 @@ buttons.forEach(button => button.addEventListener('click', () => {
                 }, 180)
             }
         }
-        runGame(chosenOperator, operandOne, operandTwo);
+        displayQuestion(chosenOperator, operandOne, operandTwo);
     }
 }));
 
