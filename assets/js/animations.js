@@ -1,11 +1,14 @@
 const submitButton = document.querySelector('.submit-answer');
 const submitText = document.querySelector('.submit-text');
 const checkIcon = document.querySelector('.fa-check-circle');
-const operandIcons = document.querySelectorAll('.operand');
+const operatorIcons = document.querySelectorAll('.operator');
 const buttons = document.querySelectorAll('.btn');
 const answerBox = document.getElementById('answer-box');
 const questionSetContainer = document.querySelector('.question-set-container');
-const operator = document.getElementById('operator');
+const activeOperator = document.getElementById('operator-display');
+const operandOne = document.getElementById('operand1');
+const operandTwo = document.getElementById('operand2');
+
 
 const baseFontColor = `hsla(206, 23%, 18%, 0.839)`;
 const additionActiveColor = `hsla(263, 91%, 35%, 0.839)`;
@@ -59,12 +62,12 @@ submitButton.addEventListener('mouseleave', () => {
     }
 });
 
-operandIcons.forEach(icon => icon.addEventListener('mouseover', () => {
-    operand = icon.dataset.operand;
+operatorIcons.forEach(icon => icon.addEventListener('mouseover', () => {
+    operatorActive = icon.dataset.operator;
 
-    if(operand) {
+    if(operatorActive) {
 
-        switch(operand){
+        switch(operatorActive){
             case "/":
                 icon.style.color = divisionActiveColor;
                 break
@@ -81,7 +84,7 @@ operandIcons.forEach(icon => icon.addEventListener('mouseover', () => {
     }
 }));
 
-operandIcons.forEach(icon => icon.addEventListener('mouseout', () => {
+operatorIcons.forEach(icon => icon.addEventListener('mouseout', () => {
     icon.style.color = baseFontColor;
 }));
 
@@ -90,22 +93,22 @@ operandIcons.forEach(icon => icon.addEventListener('mouseout', () => {
 
 const icons = [
     {   
-        operand: '+',
+        operator: '+',
         icon_style: `<i class="fas fa-plus"></i>`,
         color: additionActiveColor,
     },
     {   
-        operand: '-',
+        operator: '-',
         icon_style: `<i class="fas fa-minus"></i>`,
         color: subtractionActiveColor,
     },
     {   
-        operand: '*',
+        operator: '*',
         icon_style: `<i class="fas fa-times"></i>`,
         color: multiplicationActiveColor,
     },
     {   
-        operand: '/',
+        operator: '/',
         icon_style: `<i class="fas fa-divide"></i>`,
         color: divisionActiveColor,
     },
@@ -113,7 +116,7 @@ const icons = [
 
 buttons.forEach(button => button.addEventListener('click', () => {
 
-    operator.style.opacity = 0;
+    activeOperator.style.opacity = 0;
     // button pressed effect
     button.classList.toggle('btn-anim');
     setTimeout(() => {
@@ -134,14 +137,14 @@ buttons.forEach(button => button.addEventListener('click', () => {
             },200)     
         }
         
-        chosenOperand = button.dataset.operand;
+        chosenOperator = button.dataset.operator;
         for (icon of icons) {
-            if (chosenOperand === icon.operand) {
+            if (chosenOperator === icon.operator) {
         
                 for (opacity = 0; opacity < 1.1; opacity = opacity + 0.1) 
                 {           
                     setTimeout(() => {
-                        operator.style.opacity = opacity;
+                        activeOperator.style.opacity = opacity;
                     },220)
                 };
         
@@ -151,12 +154,12 @@ buttons.forEach(button => button.addEventListener('click', () => {
                         color: ${icon.color}`
         
                 setTimeout(() => {
-                    operator.innerHTML = appliedIcon;
-                    operator.style = appliedStyle;
+                    activeOperator.innerHTML = appliedIcon;
+                    activeOperator.style = appliedStyle;
                 }, 180)
             }
         }
-        runGame(chosenOperand);
+        runGame(chosenOperator, operandOne, operandTwo);
     }
 }));
 

@@ -99,7 +99,7 @@ section {
     text-shadow: var(--submit-text-shadow);
 }
 
-.operand:hover {
+.operator:hover {
     text-shadow: var(--icon-text-shadow);
 }
 
@@ -157,7 +157,7 @@ section {
     transition: all .5s ease-in-out;
 }
 
-#operator {
+#operator-display {
     opacity: 0;
     transition: all .2s ease-in;
 }
